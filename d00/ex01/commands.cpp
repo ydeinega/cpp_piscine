@@ -35,6 +35,7 @@ static int	get_index(int contact_num)
 	return (0);
 }
 
+
 void	add_new_contact(int *contact_num, Contact (&phonebook)[8])
 {
 	int	index;
@@ -58,7 +59,13 @@ void	make_search(int contact_num, Contact (&phonebook)[8])
 	index = 0;
 	if (contact_num == 0)
 		std::cout << "Phonebook is empty. You may ADD a contact or EXIT" << std::endl;
-	//print all contacts in a table
-	index = get_index(contact_num);
-	phonebook[index - 1].get_contact_info();
+	else
+	{
+		for (int i = 0; i < contact_num; i++)
+		{
+			phonebook[i].print_table();
+		}
+		index = get_index(contact_num);
+		phonebook[index - 1].get_contact_info();
+	}
 }

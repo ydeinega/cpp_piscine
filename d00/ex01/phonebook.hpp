@@ -16,6 +16,7 @@
 # include "Contact.class.hpp"
 # include <iostream>
 # include <string>
+# include <iomanip>
 
 void	add_new_contact(int *contact_num, Contact (&phonebook)[8]);
 void	make_search(int contact_num, Contact (&phonebook)[8]);

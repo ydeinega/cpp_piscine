@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.class.hpp"
 #include "phonebook.hpp"
 
 char	g_message[11][25] = {
@@ -45,6 +43,8 @@ void	Contact::add_contact(void)
 	{
 		std::cout << g_message[i];
 		std::getline(std::cin, this->info[i]);
+		if (this->info[i] == "EXIT")
+			exit (1);
 	}
 }
 
@@ -54,12 +54,19 @@ void	Contact::get_contact_info (void) const
 		std::cout << info[j] << std::endl;
 }
 
-int		Contact::get_index (void) const
-{
-	return (this->index);
-}
-
 void	Contact::set_index(int index)
 {
 	this->index = index;
+}
+
+void	Contact::print_table (void) const
+{
+	std::cout << '|' << std::setprecision(10) << this->index;
+	for (int j = 0; j < 3; j++)
+	{
+		std::cout << '|' << std::setw(10) << std::setprecision(10) << this->info[j];
+		if (this->info[j].size() > 10)
+			std::cout << '.';
+	}
+	std::cout << '|' << std::endl;
 }

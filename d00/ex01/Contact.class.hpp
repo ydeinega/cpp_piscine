@@ -24,7 +24,7 @@ public :
 
 	void	add_contact(void);
 	void	get_contact_info(void) const;
-	int		get_index(void) const;
+	void	print_table(void) const;
 	void	set_index(int index);
 
 private :

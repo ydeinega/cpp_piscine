@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/01 21:24:11 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/01 21:24:13 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/02 22:07:10 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/02 22:07:13 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
-# include <string>
-# include <cstdlib>
+#ifndef ZOMBIEEVENT_HPP
+# define ZOMBIEEVENT_HPP
+# include "Zombie.hpp"
 
-class	Contact{
-
-public :
-
-	void	add_contact(void);
-	void	get_contact_info(void) const;
-	void	print_table(void) const;
-	void	set_index(int index);
-
-private :
-
-	int			index;
-	std::string info[11];
-};
+class ZombieEvent {
+	
+public:
+	void	setZombieType(Zombie z, std::string type);
+	Zombie	*newZombie(std::string name);
+	void	randomChump(void);
+}
 
 #endif
+

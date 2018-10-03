@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   ex01.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/01 21:24:11 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/01 21:24:13 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/02 21:57:59 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/02 21:58:03 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
-# include <string>
-# include <cstdlib>
+#include <string>
+#include <iostream>
 
-class	Contact{
-
-public :
-
-	void	add_contact(void);
-	void	get_contact_info(void) const;
-	void	print_table(void) const;
-	void	set_index(int index);
-
-private :
-
-	int			index;
-	std::string info[11];
-};
-
-#endif
+void	memoryLeak(void)
+{
+	std::string*	panthere = new std::string("String panthere");
+	std::cout << *panthere << std::endl;
+	delete panthere;
+}

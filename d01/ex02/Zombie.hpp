@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/01 21:24:11 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/01 21:24:13 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/02 22:06:36 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/02 22:06:39 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-# define CONTACT_CLASS_HPP
+#ifndef	ZOMBIE_HPP
+# define ZOMBIE_HPP
 # include <string>
-# include <cstdlib>
+# include <iostream>
 
-class	Contact{
+class	Zombie{
 
-public :
+public:
+	Zombie(std::string name, std::string type);
+	~Zombie();
+	void	announce(void) const;
 
-	void	add_contact(void);
-	void	get_contact_info(void) const;
-	void	print_table(void) const;
-	void	set_index(int index);
-
-private :
-
-	int			index;
-	std::string info[11];
-};
+private:
+	std::string _name;
+	std::string _type;
+}
 
 #endif

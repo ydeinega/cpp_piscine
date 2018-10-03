@@ -24,13 +24,14 @@ int		main(void)
 	while (std::getline(std::cin, command))
 	{
 		if (command == "EXIT")
-			return (0);
+			exit (1);
 		else if (command == "ADD")
 			add_new_contact(&contact_num, phonebook);
 		else if (command == "SEARCH")
 			make_search(contact_num, phonebook);
 		else
 			std::cout << "Only commands ADD, SEARCH and EXIT are accepted" << std::endl;
+		std::cout << "Type a command (ADD, SEARCH, EXIT)" << std::endl;
 	}
 	return (0);
 }

@@ -19,8 +19,8 @@ class	Contact{
 
 public :
 
-	Contact(void);
-	~Contact(void);
+	// Contact(void);
+	// ~Contact(void);
 
 	void	add_contact(void);
 	void	get_contact_info(void) const;

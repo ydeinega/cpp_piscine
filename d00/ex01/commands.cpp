@@ -35,20 +35,19 @@ static int	get_index(int contact_num)
 	return (0);
 }
 
-
 void	add_new_contact(int *contact_num, Contact (&phonebook)[8])
 {
 	int	index;
 
 	index = *contact_num;
-	*contact_num += 1;
-	if (*contact_num > 8)
+	if (*contact_num + 1 > 8)
 	{
 		std::cout << "Too many contacts. Max number of contacts is " << MAX_CONTACTS << std::endl;
 		return ;
 	}
-	phonebook[index].set_index(index);
+	phonebook[index].set_index(index + 1);
 	phonebook[index].add_contact();
+	*contact_num += 1;
 }
 
 void	make_search(int contact_num, Contact (&phonebook)[8])
@@ -61,6 +60,11 @@ void	make_search(int contact_num, Contact (&phonebook)[8])
 		std::cout << "Phonebook is empty. You may ADD a contact or EXIT" << std::endl;
 	else
 	{
+		std::cout	<< '|' << std::setw(10) << "index" 
+					<< '|' << std::setw(10) << "first name"
+					<< '|' << std::setw(10) << "last name"
+					<< '|' << std::setw(10) << "nickname"
+					<< '|' << std::endl;
 		for (int i = 0; i < contact_num; i++)
 		{
 			phonebook[i].print_table();

@@ -27,16 +27,6 @@ char	g_message[11][25] = {
 	"Type Darkest Secret: "
 };
 
-Contact::Contact(void)
-{
-	
-}
-
-Contact::~Contact(void)
-{
-
-}
-
 void	Contact::add_contact(void)
 {
 	for (int i = 0; i < 11; i++)
@@ -61,12 +51,13 @@ void	Contact::set_index(int index)
 
 void	Contact::print_table (void) const
 {
-	std::cout << '|' << std::setprecision(10) << this->index;
+	std::cout << '|' << std::setw(10) << this->index;
 	for (int j = 0; j < 3; j++)
 	{
-		std::cout << '|' << std::setw(10) << std::setprecision(10) << this->info[j];
 		if (this->info[j].size() > 10)
-			std::cout << '.';
+			std::cout << '|' << this->info[j].substr(0, 9) << '.';
+		else
+			std::cout << '|' << std::setw(10) << this->info[j];
 	}
 	std::cout << '|' << std::endl;
 }

@@ -18,10 +18,15 @@ Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)	{
 				<< std::endl;
 }
 
+Zombie::Zombie(void) {
+
+	std::cout	<< "*** ZOMBIE BORN ***"
+				<< std::endl;
+}
+
 Zombie::~Zombie(void)	{
 
 	std::cout	<< "*** ZOMBIE DIED ***"
-				<< std::endl
 				<< std::endl;
 }
 
@@ -35,4 +40,16 @@ Zombie::announce(void) const
 				<< '>'
 				<< " Braiiiiiiinnnssss..."
 				<< std::endl;
+}
+
+void
+Zombie::set_name(std::string name)
+{
+	_name = name;
+}
+
+void
+Zombie::set_type(std::string type)
+{
+	_type = type;
 }

@@ -13,14 +13,22 @@
 #ifndef ZOMBIEEVENT_HPP
 # define ZOMBIEEVENT_HPP
 # include "Zombie.hpp"
+# include <cstdlib>
 
 class ZombieEvent {
 	
-public:
-	void	setZombieType(Zombie z, std::string type);
-	Zombie	*newZombie(std::string name);
-	void	randomChump(void);
-}
+public:	
+						ZombieEvent(void);
+						~ZombieEvent(void);
+	void				setZombieType(std::string type);
+	Zombie				*newZombie(std::string name) const;
+	Zombie				*randomChump(void) const;
+
+	static std::string name[37];
+
+
+private:
+	std::string _type;
+};
 
 #endif
-

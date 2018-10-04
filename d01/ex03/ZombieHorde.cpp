@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/02 22:06:53 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/02 22:06:55 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 16:08:42 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 16:08:44 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include "ZombieHorde.hpp"
 
-std::string ZombieEvent::name[37] = 
+std::string ZombieHorde::name[37] = 
 {
 		"Tyrion Lannister",
 		"Cersei Lannister",
@@ -53,41 +53,27 @@ std::string ZombieEvent::name[37] =
 		"Ramsay Bolton"
 };
 
-ZombieEvent::ZombieEvent(void) {
+ZombieHorde::ZombieHorde(int n) : _horde(new Zombie[n]), _num(n) {
 
-	std::cout	<< "*** ZombieEvent created ***"
-				<< std::endl;
+	for (int i = 0; i < _num; i++)
+	{
+		_horde[i].set_name(ZombieHorde::name[rand() % 37]);
+		_horde[i].set_type("Voodoo");
+	}
+	std::cout << "HORDE CREATED" << std::endl;
 }
 
-ZombieEvent::~ZombieEvent(void) {
+ZombieHorde::~ZombieHorde(void) {
 
-	std::cout	<< "*** ZombieEvent destroyed ***"
-				<< std::endl;
+	delete [] _horde;
+	std::cout << "HORDE DESTROYED" << std::endl;
 }
 
 void
-ZombieEvent::setZombieType(std::string type) {
-
-	this->_type = type;
-}
-
-Zombie*
-ZombieEvent::newZombie(std::string name) const {
-
-	Zombie	*new_zombie;
-
-	new_zombie = new Zombie(name, this->_type);
-	return (new_zombie);
-}
-
-Zombie*
-ZombieEvent::randomChump(void) const {
-
-	Zombie	*random_zombie;
-	int		i;
-
-	i = rand() % 37;
-	random_zombie = newZombie(ZombieEvent::name[i]);
-	random_zombie->announce();
-	return (random_zombie);
+ZombieHorde::announce(void) const
+{
+	for(int i = 0; i < _num; i++)
+	{
+		_horde[i].announce();
+	}
 }

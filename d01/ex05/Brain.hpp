@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/02 22:06:23 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/02 22:06:25 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 16:58:39 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 16:58:41 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)	{
+class	Brain {
 
-	std::cout	<< "*** ZOMBIE BORN ***"
-				<< std::endl;
+	
 }
-
-Zombie::~Zombie(void)	{
-
-	std::cout	<< "*** ZOMBIE DIED ***"
-				<< std::endl
-				<< std::endl;
-}
-
-void
-Zombie::announce(void) const
-{
-	std::cout	<< '<'
-				<< _name
-				<< ' '
-				<< _type
-				<< '>'
-				<< " Braiiiiiiinnnssss..."
-				<< std::endl;
-}
+#endif

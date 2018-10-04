@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/02 22:06:23 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/02 22:06:25 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 16:08:57 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 16:08:59 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIEHORDE
+# define ZOMBIEHORDE
+# include "Zombie.hpp"
 
-Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)	{
+class	ZombieHorde {
 
-	std::cout	<< "*** ZOMBIE BORN ***"
-				<< std::endl;
-}
+public:
+			ZombieHorde(int n);
+			~ZombieHorde();
+	void	announce(void) const;
+	
+	static	std::string name[37];
 
-Zombie::~Zombie(void)	{
+private:
+	Zombie	*_horde;
+	int		_num;
+};
 
-	std::cout	<< "*** ZOMBIE DIED ***"
-				<< std::endl
-				<< std::endl;
-}
-
-void
-Zombie::announce(void) const
-{
-	std::cout	<< '<'
-				<< _name
-				<< ' '
-				<< _type
-				<< '>'
-				<< " Braiiiiiiinnnssss..."
-				<< std::endl;
-}
+#endif

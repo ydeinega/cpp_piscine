@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/02 22:07:21 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/02 22:07:23 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/02 22:06:36 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/02 22:06:39 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#ifndef	ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <string>
+# include <iostream>
 
-void	make_random_zombies(int n)
-{
-	ZombieEvent	event;
-	Zombie		*random;
+class	Zombie{
 
-	event.setZombieType("Voodoo");
-	for (int i = 0; i < n; i++)
-	{
-		random = event.randomChump();
-		delete random;
-	}
-}
+public:
+			Zombie(std::string name, std::string type);
+			Zombie(void);
+			~Zombie(void);
+	void	set_name(std::string name);
+	void	set_type(std::string type);
+	void	announce(void) const;
 
-int		main(void)
-{
-	make_random_zombies(5);
-}
+private:
+	std::string _name;
+	std::string _type;
+};
+
+#endif

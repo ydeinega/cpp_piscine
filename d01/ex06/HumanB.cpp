@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 16:58:49 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/03 16:58:51 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 18:37:39 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 18:37:40 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "HumanB.hpp"
 
-Human::Human(void) {}
+HumanB::HumanB(std::string name) : _name(name) {}
 
-Human::~Human(void) {}
+HumanB::~HumanB(void) {}
 
-Brain const &
-Human::getBrain(void) const {
+void
+HumanB::attack(void) const {
 
-	return (_brain);
+	std::cout << _name << " attacks with his " << _type->getType() << std::endl;
 }
 
-std::string
-Human::identify(void) const {
+void	
+HumanB::setWeapon(Weapon & type) {
 
-	return (_brain.identify());
+	_type = &type;
 }

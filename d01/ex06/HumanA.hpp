@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 16:58:49 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/03 16:58:51 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 18:37:26 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 18:37:28 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+# include "Weapon.hpp"
+# include <iostream>
+# include <string>
 
-Human::Human(void) {}
+class	HumanA {
 
-Human::~Human(void) {}
+public:
+	HumanA(std::string name, Weapon & type);
+	~HumanA(void);
+	void	attack(void) const;
 
-Brain const &
-Human::getBrain(void) const {
+private:
+	std::string	_name;
+	Weapon		&_type;
+};
 
-	return (_brain);
-}
-
-std::string
-Human::identify(void) const {
-
-	return (_brain.identify());
-}
+#endif

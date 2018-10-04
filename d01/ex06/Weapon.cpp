@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 16:58:49 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/03 16:58:51 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 18:36:26 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 18:36:28 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "Weapon.hpp"
 
-Human::Human(void) {}
+Weapon::Weapon(void) {}
 
-Human::~Human(void) {}
+Weapon::Weapon(std::string type) : _type(type) {}
 
-Brain const &
-Human::getBrain(void) const {
+Weapon::~Weapon(void) {}
 
-	return (_brain);
+std::string const &
+Weapon::getType(void) const {
+
+	return (_type);
 }
 
-std::string
-Human::identify(void) const {
+void
+Weapon::setType(std::string type) {
 
-	return (_brain.identify());
+	_type = type;
 }

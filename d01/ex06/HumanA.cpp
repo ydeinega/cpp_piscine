@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 16:58:49 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/03 16:58:51 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 18:36:53 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 18:36:55 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "HumanA.hpp"
 
-Human::Human(void) {}
+HumanA::HumanA(std::string name, Weapon & type) : _name(name), _type(type) {}
 
-Human::~Human(void) {}
+HumanA::~HumanA(void) {}
 
-Brain const &
-Human::getBrain(void) const {
+void
+HumanA::attack(void) const {
 
-	return (_brain);
-}
-
-std::string
-Human::identify(void) const {
-
-	return (_brain.identify());
+	std::cout << _name << " attacks with his " << _type.getType() << std::endl;
 }

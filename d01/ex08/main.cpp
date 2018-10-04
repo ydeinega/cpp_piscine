@@ -10,4 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Human.hpp"
 
+int		main(void)
+{
+	Human	test;
+
+	test.action("meleeAttack", "Zombie");
+	test.action("rangedAttack", "Zombie");
+	test.action("intimidatingShout", "Zombie");
+}

@@ -5,15 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 16:09:06 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/03 16:09:07 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/04 18:33:00 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/04 18:33:02 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Fixed.class.hpp"
+#include <iostream>
 
 int		main(void)
 {
-	ZombieHorde	horde(5);
-	horde.announce();
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+
+	c = b;
+
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	
+	return 0;
 }

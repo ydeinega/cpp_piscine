@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Logger.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 16:09:06 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/03 16:09:07 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/03 22:50:29 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/03 22:50:31 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#ifndef LOGGER_HPP
+# define LOGGER_HPP
 
-int		main(void)
-{
-	ZombieHorde	horde(5);
-	horde.announce();
-}
+#endif

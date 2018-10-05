@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/03 16:09:06 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/03 16:09:07 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/04 18:01:39 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/04 18:01:41 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#ifndef FIXED_CLASS_HPP
+# define FIXED_CLASS_HPP
 
-int		main(void)
-{
-	ZombieHorde	horde(5);
-	horde.announce();
-}
+class	Fixed {
+
+public:
+	Fixed(void);
+	Fixed(Fixed const & src);
+	~Fixed(void);
+
+	Fixed & operator=(Fixed const & src);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+
+
+private:
+	int					_n;
+	static int const	_b;
+
+};
+
+#endif

@@ -25,9 +25,6 @@ void		write_to_file(std::string content, char *name)
 	for (std::string::size_type i = 0; i < file_name.size(); i++)
 		file_name[i] = toupper(file_name[i], loc);
 	file_name += ".replace";
-
-	std::cout << file_name <<std::endl;
-
 	std::ofstream file(file_name);
 	if (!file.is_open())
 	{

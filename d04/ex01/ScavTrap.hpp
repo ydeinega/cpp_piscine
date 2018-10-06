@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/05 15:31:07 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/05 15:31:11 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/05 19:51:54 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/05 19:51:56 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 # include <string>
 # include <iostream>
 # include <cstdlib>
 
-class	FragTrap {
+class	ScavTrap {
 
 public:
 
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const & src);
-	~FragTrap(void);
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const & src);
+	~ScavTrap(void);
 
-	FragTrap &	operator=(FragTrap const & src);
-
+	ScavTrap &	operator=(ScavTrap const & src);
+	
 	void		rangedAttack(std::string const & target) const;
 	void		meleeAttack(std::string const & target) const;
-	void		ddosAttack(std::string const & target) const;
-	void		cyberAttack(std::string const & target) const;
-	void		malwareAttack(std::string const & target) const;
-	void		vaulthunter_dot_exe(std::string const & target);
+	void		challengeNewcomer(void);
 
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
@@ -43,6 +40,8 @@ public:
 	std::string	getName(void) const;
 
 	void		setName(std::string);
+
+
 
 private:
 

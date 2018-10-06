@@ -25,19 +25,19 @@ int		main(void)
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 
-	float a1 = 1.32;
-	float a2 = 1.1;
-	Fixed c(a1);
-	Fixed d(a2);
+	// float a1 = 1.32;
+	// float a2 = 1.1;
+	// Fixed c(a1);
+	// Fixed d(a2);
 
-	std::cout << "c = " << c << std::endl;
-	std::cout << "d = " << d << std::endl;
-	std::cout << "c + d 1.42 = " << c + d << std::endl; 
-	std::cout << "a1 + a2 1.42 = " << a1 + a2 << std::endl; 
-	std::cout << "c - d 1.22 = " << c - d << std::endl; 
-	std::cout << "c * d 1.452 = " << c * d << std::endl;
-	std::cout << "c / d 1.2 = " << c / d << std::endl;
-	std::cout << "d / c 0.83 = " << d / c << std::endl;
+	// std::cout << "c = " << c << std::endl;
+	// std::cout << "d = " << d << std::endl;
+	// std::cout << "c + d 1.42 = " << c + d << std::endl; 
+	// std::cout << "a1 + a2 1.42 = " << a1 + a2 << std::endl; 
+	// std::cout << "c - d 1.22 = " << c - d << std::endl; 
+	// std::cout << "c * d 1.452 = " << c * d << std::endl;
+	// std::cout << "c / d 1.2 = " << c / d << std::endl;
+	// std::cout << "d / c 0.83 = " << d / c << std::endl;
 
 	return 0;
 }

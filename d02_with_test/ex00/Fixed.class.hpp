@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ydeineha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/04 18:33:00 by ydeineha          #+#    #+#             */
-/*   Updated: 2018/10/04 18:33:02 by ydeineha         ###   ########.fr       */
+/*   Created: 2018/10/04 18:01:39 by ydeineha          #+#    #+#             */
+/*   Updated: 2018/10/04 18:01:41 by ydeineha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
-#include <iostream>
+#ifndef FIXED_CLASS_HPP
+# define FIXED_CLASS_HPP
 
-int		main(void)
-{
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+class	Fixed {
 
-	c = b;
+public:
+	Fixed(void);
+	Fixed(Fixed const & src);
+	~Fixed(void);
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	
-	return 0;
-}
+	Fixed & operator=(Fixed const & src);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+
+
+private:
+	int					_n;
+	static int const	_b;
+
+};
+
+#endif

@@ -10,4 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
+# include "Form.hpp"
+# include <cstdlib>
+# include <dos.h>
 
+class	RobotomyRequestForm : public Form {
+
+public:
+	RobotomyRequestForm();
+	~RobotomyRequestForm();
+	RobotomyRequestForm(std::string);
+	RobotomyRequestForm(RobotomyRequestForm const &);
+
+	RobotomyRequestForm & operator=(RobotomyRequestForm const & src);
+	std::string const getTarget() const;
+
+private:
+	void	make_execute() const;
+
+	std::string _target;
+};
+
+
+
+#endif

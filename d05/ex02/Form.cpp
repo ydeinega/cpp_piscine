@@ -161,5 +161,5 @@ void				Form::execute(Bureaucrat const & executor) const
 		else if (executor.getGrade() > _grade_to_execute)
 			throw GradeTooLowException;
 		else
-			make_execute(executor);
+			make_execute();
 }

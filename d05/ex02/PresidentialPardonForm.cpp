@@ -26,12 +26,12 @@ Form(src.getName(), src.getGradeToSign(), src.getGradeToExecute())
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & src)
 {
-	_signed = src.getSigned();
+	Form::operator=(src);
 	_target = src.getTarget();
 	return (*this);
 }
 
-void	PresidentialPardonForm::make_execute(Bureaucrat const & executor) const
+void	PresidentialPardonForm::make_execute(void) const
 {
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

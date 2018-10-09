@@ -23,10 +23,11 @@ public:
 	PresidentialPardonForm(PresidentialPardonForm const &);
 
 	PresidentialPardonForm & operator=(PresidentialPardonForm const & src);
-	void	make_execute(Bureaucrat const & executor) const;
 	std::string const getTarget() const;
 
 private:
+	void	make_execute() const;
+
 	std::string _target;
 };
 

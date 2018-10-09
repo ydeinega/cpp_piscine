@@ -67,8 +67,9 @@ public:
 	} NotSignedException;
 
 protected:
-	virtual void	make_execute(Bureaucrat const & executor) const = 0;//Abstract
+	virtual void	make_execute() const = 0;//Abstract
 
+private:
 	std::string const _name;
 	bool _signed;
 	int	const _grade_to_sign;

@@ -13,13 +13,16 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int		main(void)
 {
 	PresidentialPardonForm a ("Yuliya Deinega");
+	RobotomyRequestForm b ("Denys Gonor");
 
 	std::cout << std::endl;
 	std::cout << a << std::endl;
+	std::cout << b << std::endl;
 
 	std::cout << std::endl;
 	Bureaucrat bob("Bob", 90);
@@ -35,4 +38,11 @@ int		main(void)
 	leo.signForm(a);
 	bob.executeForm(a);
 	mike.executeForm(a);
+
+	std::cout << std::endl;
+	bob.signForm(b);
+	mike.executeForm(b);
+	leo.signForm(b);
+	bob.executeForm(b);
+	mike.executeForm(b);
 }
